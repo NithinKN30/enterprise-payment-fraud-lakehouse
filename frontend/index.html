@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayGuard | Fraud Monitoring</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">P</div>
+            <span>PayGuard</span>
+        </div>
+
+        <p class="nav-label">WORKSPACE</p>
+        <a class="nav-item active" href="#">▦ Dashboard</a>
+        <a class="nav-item" href="#transactions">⇄ Transactions</a>
+        <a class="nav-item" href="#analytics">◷ Analytics</a>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar">AD</div>
+            <div>
+                <strong>Administrator</strong>
+                <small>Fraud Operations</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">OVERVIEW</p>
+                <h1>Fraud Monitoring Dashboard</h1>
+                <p class="subtitle">Monitor payment activity and transaction health.</p>
+            </div>
+            <div class="system-status">
+                <span class="status-dot"></span>
+                System operational
+            </div>
+        </header>
+
+        <section class="metrics-grid">
+            <article class="metric-card">
+                <p>Total Transactions</p>
+                <h2 id="total-transactions">—</h2>
+                <small>All recorded transactions</small>
+            </article>
+
+            <article class="metric-card">
+                <p>Total Transaction Value</p>
+                <h2 id="total-amount">—</h2>
+                <small>Combined transaction amount</small>
+            </article>
+
+            <article class="metric-card">
+                <p>Successful Payments</p>
+                <h2 id="successful-transactions">—</h2>
+                <small class="success-text">Successful transactions</small>
+            </article>
+
+            <article class="metric-card">
+                <p>Failed Payments</p>
+                <h2 id="failed-transactions">—</h2>
+                <small class="danger-text">Failed transactions</small>
+            </article>
+		<article class="metric-card">
+    <p>Average Transaction Value</p>
+    <h2 id="average-amount">—</h2>
+    <small>Average amount per transaction</small>
+</article>
+        </section>
+
+        <section class="content-card" id="transactions">
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Transactions</h2>
+                    <p>Review and filter payment activity.</p>
+                </div>
+
+                <select id="status-filter">
+                    <option value="">All statuses</option>
+                    <option value="SUCCESS">Successful</option>
+                    <option value="FAILED">Failed</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Customer</th>
+                            <th>Merchant</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-table">
+                        <tr>
+                            <td colspan="6">Loading transactions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            PayGuard · Payment Fraud Monitoring Platform
+	    <section class="analytics-grid" id="analytics">
+    <article class="analytics-card">
+        <div class="section-heading">
+            <div>
+                <h2>Payment Methods</h2>
+                <p>Transaction distribution by payment method.</p>
+            </div>
+        </div>
+
+        <div id="payment-methods" class="analytics-list">
+            Loading...
+        </div>
+    </article>
+
+    <article class="analytics-card">
+        <div class="section-heading">
+            <div>
+                <h2>Transaction Health</h2>
+                <p>Current transaction success and failure rate.</p>
+            </div>
+        </div>
+
+        <div class="health-container">
+            <div class="health-item">
+                <div class="health-label">
+                    <span>Success rate</span>
+                    <strong id="success-rate">—</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="success-progress" class="progress success-progress"></div>
+                </div>
+            </div>
+
+            <div class="health-item">
+                <div class="health-label">
+                    <span>Failure rate</span>
+                    <strong id="failure-rate">—</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="failure-progress" class="progress failure-progress"></div>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+        </footer>
+
+<section class="transactions-section" id="suspicious">
+    <div class="section-heading">
+        <div>
+            <h2>Suspicious Transactions</h2>
+            <p>Transactions flagged by fraud detection rules.</p>
+        </div>
+        <span class="risk-indicator">Risk Monitoring</span>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Risk Level</th>
+                    <th>Detection Reason</th>
+                </tr>
+            </thead>
+            <tbody id="suspicious-table">
+                <tr>
+                    <td colspan="5">Loading suspicious transactions...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    </main>
+</body>
+</html>

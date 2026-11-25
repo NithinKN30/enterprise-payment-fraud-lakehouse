@@ -1,4 +1,6 @@
 import csv
+import random
+import argparse
 from pathlib import Path
 transactions = [
     {

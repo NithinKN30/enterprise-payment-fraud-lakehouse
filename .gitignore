@@ -31,3 +31,6 @@ Thumbs.db
 
 # Data files
 *.tmp
+
+# Generated databases
+datasets/*.db
